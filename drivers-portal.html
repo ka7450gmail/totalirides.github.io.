@@ -479,27 +479,35 @@
             </div>
         </div>
     </section>
-<!-- ACCORDION SCRIPT: ENSURES DRIVER FAQ WORKS INDEPENDENTLY -->
-    <script>
-        document.querySelectorAll('.accordion__trigger').forEach(button => {
-            button.addEventListener('click', () => {
-                const accordionItem = button.parentElement;
-                const accordionBody = accordionItem.querySelector('.accordion__body');
-                
-                // Toggle active state
-                const isOpen = button.getAttribute('aria-expanded') === 'true';
-                button.setAttribute('aria-expanded', !isOpen);
-                
-                // Show or hide the content
-                if (!isOpen) {
-                    accordionBody.style.display = 'block';
-                    accordionBody.classList.add('open');
-                } else {
-                    accordionBody.style.display = 'none';
-                    accordionBody.classList.remove('open');
+<!-- UPDATED ACCORDION SCRIPT: CLOSES OTHERS WHEN ONE OPENS -->
+<script>
+    document.querySelectorAll('.accordion__trigger').forEach(button => {
+        button.addEventListener('click', () => {
+            const accordionItem = button.parentElement;
+            const accordionBody = accordionItem.querySelector('.accordion__body');
+            const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+            // 1. CLOSE ALL OTHER ITEMS FIRST
+            document.querySelectorAll('.accordion__trigger').forEach(otherButton => {
+                if (otherButton !== button) {
+                    otherButton.setAttribute('aria-expanded', 'false');
+                    const otherBody = otherButton.parentElement.querySelector('.accordion__body');
+                    otherBody.style.display = 'none';
+                    otherBody.classList.remove('open');
                 }
             });
+
+            // 2. TOGGLE THE CLICKED ITEM
+            button.setAttribute('aria-expanded', !isOpen);
+            if (!isOpen) {
+                accordionBody.style.display = 'block';
+                accordionBody.classList.add('open');
+            } else {
+                accordionBody.style.display = 'none';
+                accordionBody.classList.remove('open');
+            }
         });
-    </script>
+    });
+</script>    
 </body>
 </html>
