@@ -320,6 +320,66 @@
                 </div>
             </div>
         </div>
+        <!-- SECTION: DRIVER FAQ (ACCORDION STYLE) -->
+<section class="founder" id="driver-faq" style="background: #050505;">
+    <div class="founder__inner">
+        <div class="founder__card-wrap">
+            <div class="founder__card">
+                <div class="pill-header">
+                    <div class="dot-small"></div>
+                    <span style="color: var(--color-cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem;">Driver Support</span>
+                </div>
+                
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem; text-transform: uppercase; font-weight: 800;">Everything You <span style="color: var(--color-cyan);">Need to Know</span></h2>
+                <p style="color: rgba(255,255,255,0.6); margin-bottom: 3rem;">Clear answers on earnings, taxes, and how we get you paid.</p>
+
+                <div class="accordion">
+
+                    <!-- PAYMENTS & STRIPE -->
+                    <div class="accordion__item">
+                        <button class="accordion__trigger" style="background: none; border: none; color: white; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 0; cursor: pointer; border-bottom: 1px solid #222;">
+                            <span style="font-weight: 700; font-size: 1.1rem;">How and when do I get paid?</span>
+                        </button>
+                        <div class="accordion__body" style="padding: 20px 0; color: rgba(255,255,255,0.8); line-height: 1.6;">
+                            <p>We use <strong>Stripe Connect</strong> for all driver payouts. Your earnings are settled weekly and deposited directly into your linked bank account. You can track your real-time balance and upcoming transfers directly through the "Earnings" tab in the Totali Driver App.</p>
+                        </div>
+                    </div>
+
+                    <!-- HST BREAKDOWN -->
+                    <div class="accordion__item">
+                        <button class="accordion__trigger" style="background: none; border: none; color: white; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 0; cursor: pointer; border-bottom: 1px solid #222;">
+                            <span style="font-weight: 700; font-size: 1.1rem;">How is the 70% take calculated with HST?</span>
+                        </button>
+                        <div class="accordion__body" style="padding: 20px 0; color: rgba(255,255,255,0.8); line-height: 1.6;">
+                            <p>As an Independent Contractor in Ontario, the CRA requires you to collect HST on all fares. Your 70% "Gross Take" includes this tax. For example, on a $100 fare, you receive $70.00 ($61.94 for your services + $8.06 HST). Totali automatically generates tax-compliant invoices for every ride to keep your records perfect.</p>
+                        </div>
+                    </div>
+
+                    <!-- INSURANCE -->
+                    <div class="accordion__item">
+                        <button class="accordion__trigger" style="background: none; border: none; color: white; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 0; cursor: pointer; border-bottom: 1px solid #222;">
+                            <span style="font-weight: 700; font-size: 1.1rem;">What insurance do I need?</span>
+                        </button>
+                        <div class="accordion__body" style="padding: 20px 0; color: rgba(255,255,255,0.8); line-height: 1.6;">
+                            <p>You maintain your standard personal auto insurance. Totali provides the primary Commercial Fleet Insurance that covers you and your passengers while you are on a "Totali Trip," ensuring you are fully compliant with Ontario transportation regulations.</p>
+                        </div>
+                    </div>
+
+                    <!-- BACKGROUND CHECK -->
+                    <div class="accordion__item">
+                        <button class="accordion__trigger" style="background: none; border: none; color: white; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 0; cursor: pointer; border-bottom: 1px solid #222;">
+                            <span style="font-weight: 700; font-size: 1.1rem;">How do I start the background check?</span>
+                        </button>
+                        <div class="accordion__body" style="padding: 20px 0; color: rgba(255,255,255,0.8); line-height: 1.6;">
+                            <p>Simply upload your Vulnerable Sector Screening (VSS) and a recent Driving Abstract through the app. Because we are local to London, our verification team typically approves qualified drivers within 3 to 5 business days.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     </section> <!-- SECTION 2: TEMPLATE FOR OTHER POLICIES (Copy this for Ratings, Safety, etc.) -->
     <section class="founder" id="bill-of-rights">
         <div class="founder__inner">
@@ -350,6 +410,7 @@
             </div>
         </div>
     </section>
+    
     <!-- SECTION 2: TEMPLATE FOR OTHER POLICIES (Copy this for Ratings, Safety, etc.) -->
     <section class="founder" id="bill-of-rights">
         <div class="founder__inner">
@@ -380,6 +441,27 @@
             </div>
         </div>
     </section>
-
+!-- ACCORDION SCRIPT: ENSURES DRIVER FAQ WORKS INDEPENDENTLY -->
+    <script>
+        document.querySelectorAll('.accordion__trigger').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionItem = button.parentElement;
+                const accordionBody = accordionItem.querySelector('.accordion__body');
+                
+                // Toggle active state
+                const isOpen = button.getAttribute('aria-expanded') === 'true';
+                button.setAttribute('aria-expanded', !isOpen);
+                
+                // Show or hide the content
+                if (!isOpen) {
+                    accordionBody.style.display = 'block';
+                    accordionBody.classList.add('open');
+                } else {
+                    accordionBody.style.display = 'none';
+                    accordionBody.classList.remove('open');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
