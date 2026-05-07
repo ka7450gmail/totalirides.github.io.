@@ -400,40 +400,75 @@
         </div>
     </div>
 </section>
-    <!-- SECTION: SERVICE AGREEMENT (FINAL VERSION) -->
+  <!-- SECTION: BINDING SERVICE AGREEMENT (v1.0) -->
 <section class="founder" id="agreement">
     <div class="founder__inner">
         <div class="founder__card-wrap">
             <div class="founder__card">
                 <div class="pill-header">
                     <div class="dot-small"></div>
-                    <span style="color: var(--color-cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem;">Legal Document</span>
+                    <span style="color: var(--color-cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem;">Legal Compliance v1.0</span>
                 </div>
                 <h1>Platform Access <span style="color: var(--color-cyan);">Agreement</span></h1>
+                
                 <div class="content-body">
-                    <p>Before you begin driving with Totali, it is important that you review our Platform Access Agreement (PAA). This document outlines the legal partnership between you as an Independent Contractor and Totali Inc.</p>
+                    <p>To drive with Totali, you must review and agree to the PAA. This is a legally binding contract under Ontario law.</p>
                     
-                    <p><strong>Key areas covered in the PAA include:</strong></p>
                     <ul class="policy-list">
-                        <li><strong>Independent Contractor Status:</strong> Details on your business relationship with Totali.</li>
-                        <li><strong>Payment Structure:</strong> Legal breakdown of the 70/30 split and HST remittance.</li>
-                        <li><strong>Insurance & Liability:</strong> Coverage details for you and your passengers.</li>
-                        <li><strong>Safety & Compliance:</strong> Zero-tolerance policies and vehicle standards.</li>
+                        <li><strong>Small Claims First:</strong> Disputes under $50,000 resolved via Small Claims Court.</li>
+                        <li><strong>Arbitration:</strong> High-value disputes handled by ADRIC in London, ON.</li>
+                        <li><strong>Status:</strong> You are an Independent Contractor.</li>
                     </ul>
-                    
-                    <p>You will be required to acknowledge and sign this agreement within the Totali Driver App during your final onboarding phase.</p>
-                </div>
 
-                <div style="text-align: center; margin-top: 40px;">
-                    <!-- REPLACE '#' WITH YOUR ACTUAL PDF LINK LATER -->
-                    <a href="assets/documents/Totali_PAA_2024.pdf" target="_blank" class="btn-download">
-                        Download Full PAA (PDF)
-                    </a>
+                    <!-- THE BINDING FORM -->
+                    <form action="https://formspree.io" method="POST" id="paa-form" style="margin-top: 30px; text-align: left;">
+                        <input type="hidden" name="PAA_Version" value="v1.0-May-2024">
+                        
+                        <div style="background: rgba(0,255,255,0.05); padding: 20px; border-radius: 8px; border: 1px dashed var(--color-cyan);">
+                            <p style="margin-bottom: 15px;">
+                                <strong>Step 1:</strong> 
+                                <a href="assets/documents/Totali_PAA_v1.0.pdf" target="_blank" id="paa-link" style="color: var(--color-cyan); font-weight: bold; text-decoration: underline;">
+                                   Open and Read the Full PAA (PDF)
+                                </a>
+                            </p>
+                            
+                            <label style="display: block; margin-bottom: 15px; font-size: 0.9rem; cursor: pointer;">
+                                <input type="checkbox" id="agree-checkbox" required disabled style="margin-right: 10px;">
+                                I have read and agree to be bound by the Totali Platform Access Agreement.
+                            </label>
+
+                            <input type="text" name="driver_name" placeholder="Your Full Legal Name" required 
+                                   style="width: 100%; padding: 12px; margin-bottom: 15px; background: #000; border: 1px solid #444; color: #fff; border-radius: 4px;">
+                            
+                            <button type="submit" id="submit-btn" class="btn-download" style="width: 100%; opacity: 0.4; cursor: not-allowed;" disabled>
+                                Digitally Sign & Agree
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    // Logic to unlock the form only after PDF is opened
+    const pLink = document.getElementById('paa-link');
+    const pBox = document.getElementById('agree-checkbox');
+    const pBtn = document.getElementById('submit-btn');
+
+    pLink.addEventListener('click', () => {
+        pBox.disabled = false;
+        pLink.innerHTML = "PAA Document Opened ✓";
+    });
+
+    pBox.addEventListener('change', () => {
+        pBtn.disabled = !pBox.checked;
+        pBtn.style.opacity = pBox.checked ? "1" : "0.4";
+        pBtn.style.cursor = pBox.checked ? "pointer" : "not-allowed";
+    });
+</script> 
+
         <!-- SECTION: DRIVER FAQ (ACCORDION STYLE) -->
 <section class="founder" id="driver-faq" style="background: #050505;">
     <div class="founder__inner">
