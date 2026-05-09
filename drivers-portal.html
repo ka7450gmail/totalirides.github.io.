@@ -184,7 +184,23 @@
 
 [aria-expanded="true"]::after {
     content: '−';
-}    
+}  
+        /* MOBILE FIX FOR SECTION OVERFLOW */
+@media screen and (max-width: 768px) {
+    .founder, .founder__inner, .founder__card-wrap, .founder__card {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Shrink the big title so it fits on one line */
+    h1 {
+        font-size: 1.8rem !important; 
+        word-wrap: break-word !important;
+    }
+}
     </style>
 </head>
 
