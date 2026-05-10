@@ -104,7 +104,7 @@
 
         @media print {
             body { background: white; }
-            .flyer-page { box-shadow: none; width: 100%; height: 100vh; }
+            .flyer-page { box-shadow: none; width: 100%; height: 100vh; margin: 0; }
             .btn-print { display: none; }
         }
         .btn-print {
@@ -124,4 +124,50 @@
 </head>
 <body>
 
+    <button class="btn-print" onclick="window.print()">🖨️ PRINT FLYER</button>
 
+    <div class="flyer-page">
+        <div class="header">
+            <h1>TOTALI</h1>
+            <p>The 70/30 Revolution</p>
+        </div>
+
+        <div class="hero-statement">
+            London’s first rideshare platform built by drivers, for drivers.
+        </div>
+
+        <div class="benefit-grid">
+            <div class="benefit-item">
+                <h3>Your Take: 70% Guaranteed</h3>
+                <p>Your Take is 70% of Rider’s Total Fare, 100% of the time. No hidden deductions.</p>
+            </div>
+            <div class="benefit-item">
+                <h3>No Tips</h3>
+                <p>Better math means you don't rely on the uncertainty of tips to make a living.</p>
+            </div>
+            <div class="benefit-item">
+                <h3>2 Million</h3>
+                <p>Primary commercial liability insurance covers you the moment you accept a ride.</p>
+            </div>
+            <div class="benefit-item">
+                <h3>London</h3>
+                <p>Built in London, Ontario for local drivers who deserve a dignified wage.</p>
+            </div>
+        </div>
+
+        <div class="qr-area">
+            <div class="qr-box">
+                <img src="assets/images/qr-driver-portal.png" alt="Scan to Sign">
+            </div>
+            <div class="qr-text">
+                <h2>SCAN TO JOIN</h2>
+                <p>Review the Agreement & Sign Online Now</p>
+                <div style="margin-top:10px; font-weight:bold; color:var(--cyan); background:black; display:inline-block; padding:5px 10px; border-radius:5px;">
+                    TOTALIRIDES.CA
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
