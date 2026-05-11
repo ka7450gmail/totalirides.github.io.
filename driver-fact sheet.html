@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,7 @@
     <style>
         :root { --cyan: #00bcd4; --dark: #1a1a1a; }
         body { font-family: 'Inter', sans-serif; background: #fff; color: var(--dark); padding: 40px; line-height: 1.4; }
-        .sheet { max-width: 8.5in; margin: auto; border: 2px solid #000; padding: 40px; position: relative; }
+        .sheet { max-width: 8.5in; margin: auto; border: 2px solid #000; padding: 40px; position: relative; box-sizing: border-box; }
         
         .header { border-bottom: 4px solid var(--cyan); padding-bottom: 10px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
         h1 { font-size: 2.2rem; font-weight: 900; margin: 0; text-transform: uppercase; letter-spacing: -1px; }
@@ -24,8 +25,11 @@
         .right-item { font-size: 0.85rem; display: flex; align-items: flex-start; }
         .right-item:before { content: "✓"; color: var(--cyan); font-weight: 900; margin-right: 8px; }
 
-        .footer { text-align: center; border-top: 2px solid #000; padding-top: 20px; font-weight: 900; font-size: 1.3rem; }
-        .footer span { color: var(--cyan); }
+        /* Updated Footer with sizing for Email and URL */
+        .footer { text-align: center; border-top: 2px solid #000; padding-top: 20px; }
+        .footer-url { font-weight: 900; font-size: 1.4rem; margin-bottom: 5px; display: block; }
+        .footer-url span { color: var(--cyan); }
+        .footer-email { font-weight: 700; font-size: 1rem; color: #555; text-transform: lowercase; }
 
         @media print { .btn-print { display: none; } body { padding: 0; } .sheet { border: none; } }
         .btn-print { position: fixed; top: 20px; right: 20px; padding: 12px 24px; background: #000; color: #fff; border: none; font-weight: bold; border-radius: 50px; cursor: pointer; }
@@ -73,7 +77,8 @@
     </div>
 
     <div class="footer">
-        Email: admin@totalirides.ca<span>WWW.TOTALIRIDES.CA</span>
+        <div class="footer-url">JOIN THE REVOLUTION AT <span>WWW.TOTALIRIDES.CA</span></div>
+        <div class="footer-email">Email: admin@totalirides.ca</div>
     </div>
 </div>
 
