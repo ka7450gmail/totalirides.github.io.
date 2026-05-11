@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Totali - Driver Bill of Rights</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        :root { --cyan: #00bcd4; --dark: #333; }
+        body { font-family: 'Inter', sans-serif; background: #fff; color: var(--dark); padding: 40px; line-height: 1.5; }
+        .container { max-width: 8.5in; margin: auto; border: 1px solid #eee; padding: 50px; }
+        
+        header { border-bottom: 3px solid var(--cyan); padding-bottom: 20px; margin-bottom: 40px; }
+        h1 { font-size: 2.5rem; font-weight: 900; margin: 0; color: #000; text-transform: uppercase; }
+        .subtitle { font-size: 1.2rem; color: var(--cyan); font-weight: 700; margin-top: 5px; }
+
+        .intro { font-size: 1.1rem; margin-bottom: 30px; font-style: italic; color: #555; }
+
+        .point { margin-bottom: 25px; page-break-inside: avoid; }
+        .point h3 { font-size: 1.3rem; color: #000; margin-bottom: 8px; border-left: 5px solid var(--cyan); padding-left: 15px; text-transform: uppercase; }
+        .point p { margin: 0; padding-left: 20px; font-size: 1.05rem; }
+
+        footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .footer-logo { font-weight: 900; font-size: 1.2rem; }
+        .footer-url { color: var(--cyan); font-weight: 700; text-decoration: none; }
+
+        @media print { body { padding: 0; } .container { border: none; } .btn-print { display: none; } }
+        .btn-print { position: fixed; top: 20px; right: 20px; padding: 12px 24px; background: var(--cyan); color: white; border: none; font-weight: bold; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<button class="btn-print" onclick="window.print()">🖨️ PRINT DOCUMENT</button>
+
+<div class="container">
+    <header>
+        <h1>Driver Bill of Rights</h1>
+        <div class="subtitle">The Totali Rides Partnership Promise</div>
+    </header>
+
+    <p class="intro">Stop being treated like a "user" and start being treated like a Partner. We built Totali to fix the Big Tech frustrations in London.</p>
+
+    <div class="point">
+        <h3>100% Upfront Transparency</h3>
+        <p>See the full drop-off address, exact distance, and your 70% share <strong>before</strong> you hit accept. No status levels required.</p>
+    </div>
+
+    <div class="point">
+        <h3>Human-First Ratings</h3>
+        <p>No automatic de-ratings from bots. We require multiple independent reports within a shift to substantiate a claim. One grumpy passenger won't ruin your livelihood.</p>
+    </div>
+
+    <div class="point">
+        <h3>The "No-Bot" Guarantee</h3>
+        <p>Disputes are handled by real people in London who know the streets—not an automated email template from overseas.</p>
+    </div>
+
+    <div class="point">
+        <h3>Unlimited Area Preferences</h3>
+        <p>Stay in North London or the University area as long as you want. We don't time-limit your filter selections.</p>
+    </div>
+
+    <div class="point">
+        <h3>Zero-Penalty Freedom</h3>
+        <p>You are your own boss. Your acceptance rate will <strong>never</strong> be used to punish you or hide trip details.</p>
+    </div>
+
+    <div class="point">
+        <h3>Founding Partner Voice</h3>
+        <p>As a London-born startup, your feedback directly shapes our app. We grow based on what helps you maximize your business.</p>
+    </div>
+
+    <footer>
+        <div class="footer-logo">TOTALI RIDES</div>
+        <a href="https://totalirides.ca" class="footer-url">WWW.TOTALIRIDES.CA</a>
+    </footer>
+</div>
+
+</body>
+</html>
